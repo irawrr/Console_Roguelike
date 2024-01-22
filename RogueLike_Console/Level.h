@@ -19,6 +19,7 @@ class Level
 {
 private:
 	int _levelCounter = 1;
+	int _turnCounter = 0;
 	vector<string> _levelData;
 	vector<Enemy> _enemies;
 	vector<string> _levelPath;
@@ -37,4 +38,5 @@ public:
 	void setUnitTile(int x, int y, char unitTile);
 	void saveProgress(int levelNum, int x, int y);
 	void clearLevel();
+	void incrementTurnCounter();
 };
