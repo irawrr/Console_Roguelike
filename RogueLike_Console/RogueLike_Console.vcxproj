@@ -139,6 +139,12 @@
     <ClInclude Include="..\..\Game_ASCIIRogueLike\ASCIIRogueLike\Level.h" />
     <ClInclude Include="..\..\Game_ASCIIRogueLike\ASCIIRogueLike\Player.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Levels\Level_1.level" />
+    <None Include="Levels\Level_2!.level" />
+    <None Include="Levels\Level_2.level" />
+    <None Include="Levels\Level_3.level" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

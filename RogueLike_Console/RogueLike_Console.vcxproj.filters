@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Levels">
+      <UniqueIdentifier>{0a9cb730-06a0-4ff5-a5cc-b6fa0562b789}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Game_ASCIIRogueLike\ASCIIRogueLike\GameManager.cpp">
@@ -44,5 +47,19 @@
     <ClInclude Include="..\..\Game_ASCIIRogueLike\ASCIIRogueLike\Player.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Levels\Level_1.level">
+      <Filter>Levels</Filter>
+    </None>
+    <None Include="Levels\Level_2!.level">
+      <Filter>Levels</Filter>
+    </None>
+    <None Include="Levels\Level_2.level">
+      <Filter>Levels</Filter>
+    </None>
+    <None Include="Levels\Level_3.level">
+      <Filter>Levels</Filter>
+    </None>
   </ItemGroup>
 </Project>
