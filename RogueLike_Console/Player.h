@@ -38,4 +38,5 @@ public:
 	void addXP(int xp);
 	int getPlayerHealth();
 	void unknownEncounter();
+	void healthUp();
 };
