@@ -1,11 +1,15 @@
 #include "Level.h"
-
 Level::Level()
 {
 }
 
 Level::~Level()
 {
+}
+
+void Level::incrementTurnCounter()
+{
+	_turnCounter++;
 }
 
 void Level::loadLevel(string fileName, Player &player)
@@ -120,6 +124,8 @@ void Level::movePlayer(char move, Player &player)
 	}
 }
 
+
+
 void Level::movePlayerLogic(Player &player, int moveX, int moveY)
 {
 	int playerX;
@@ -144,14 +150,19 @@ void Level::movePlayerLogic(Player &player, int moveX, int moveY)
 		case 'S': battleEnemy(player, moveX, moveY);
 			break;
 
-		case '#': //printf("\nYou hit a wall!!\n");
-			//system("PAUSE>NULL");
+		case '#': printf("\nYou hit a wall!!\n");
+			system("PAUSE>NULL");
 			break;
 
-		case '~': player.setPosition(moveX, moveY);
-			setUnitTile(playerX, playerY, '~');
-			setUnitTile(moveX, moveY, '@');
+		case '~':
+			// Water
+			if (_turnCounter % 2 == 0) {
+				player.setPosition(moveX, moveY);
+				setUnitTile(playerX, playerY, '~');
+				setUnitTile(moveX, moveY, '@');
+			}
 			break;
+
 
 		case '?': player.unknownEncounter();
 			player.setPosition(moveX, moveY);
