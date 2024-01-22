@@ -1,5 +1,6 @@
 #include "GameManager.h"
-
+#include <Windows.h>
+#include <iostream>
 
 GameManager::GameManager(string levelFileName)
 {
@@ -14,6 +15,7 @@ GameManager::~GameManager()
 
 void GameManager::runGame()
 {
+	mainMenu();
 	int input = 3;
 	bool gameOver = false;
 
@@ -21,10 +23,10 @@ void GameManager::runGame()
 	{
 		switch (input)
 		{
-			case 1: 
+			case 1:
 				break;
 
-			case 2: 
+			case 2:
 				break;
 
 			case 3: system("cls");
@@ -56,12 +58,13 @@ void GameManager::playerInput()
 	_level.movePlayer(input, _player);
 }
 
-void GameManager::mainMenu()
-{
-	for (int i = 0; i < _mainMenu.size(); i++)
-	{
-		printf("%s\n", _mainMenu[i].c_str());
-	}
-
-	system("PAUSE>null");
+void GameManager::mainMenu() {
+	system("cls");
+	CONSOLE_SCREEN_BUFFER_INFO csbi;	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+	int consoleWidth = csbi.srWindow.Right - csbi.srWindow.Left + 1;	int consoleHeight = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+	std::cout << std::string((consoleWidth - 26) / 2, ' ') << "Welcome to RogueLike Console Game!!\n" << std::endl;	std::cout << std::string((consoleWidth - 14) / 2, ' ') << "Press 'space' to start\n" << std::endl;
+	int input = 0;
+	while (input != 32) { // Ожидание нажатия пробела		
+		input = _getch();
+	}	system("cls");
 }
