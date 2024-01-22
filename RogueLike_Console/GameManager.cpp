@@ -44,6 +44,7 @@ void GameManager::runGame()
 		_level.displayLevel();
 		playerInput();
 		_level.updateEnemyPosition(_player);
+		_level.incrementTurnCounter();
 	}
 }
 
