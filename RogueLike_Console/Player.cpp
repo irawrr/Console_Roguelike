@@ -82,10 +82,17 @@ int Player::getPlayerHealth()
 	return _health;
 }
 
+void Player::healthUp()
+{
+	printf("\nHealth: +20");
+	_health += 20;
+	system("PAUSE>null");
+}
+
 void Player::unknownEncounter()
 {
 	static mt19937 randomEngine(time(NULL));
-	uniform_int_distribution<int> bonusChance(0, 3);
+	uniform_int_distribution<int> bonusChance(0, 2);
 
 	switch (bonusChance(randomEngine))
 	{
@@ -101,11 +108,6 @@ void Player::unknownEncounter()
 
 		case 2: printf("\nDefence: +20");
 			_defence += 20;
-			system("PAUSE>null");
-			break;
-
-		case 3: printf("\nHealth: +20");
-			_health += 20;
 			system("PAUSE>null");
 			break;
 	}
